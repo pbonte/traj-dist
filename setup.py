@@ -3,18 +3,18 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import numpy
 
-ext_modules = [Extension("traj_dist.cydist.basic_geographical", ["traj_dist/cydist/basic_geographical.pyx"]),
-               Extension("traj_dist.cydist.basic_euclidean", ["traj_dist/cydist/basic_euclidean.pyx"]),
-               Extension("traj_dist.cydist.sspd", ["traj_dist/cydist/sspd.pyx"]),
-               Extension("traj_dist.cydist.dtw", ["traj_dist/cydist/dtw.pyx"]),
-               Extension("traj_dist.cydist.lcss", ["traj_dist/cydist/lcss.pyx"]),
-               Extension("traj_dist.cydist.hausdorff", ["traj_dist/cydist/hausdorff.pyx"]),
-               Extension("traj_dist.cydist.discret_frechet", ["traj_dist/cydist/discret_frechet.pyx"]),
-               Extension("traj_dist.cydist.frechet", ["traj_dist/cydist/frechet.pyx"]),
-               Extension("traj_dist.cydist.segment_distance", ["traj_dist/cydist/segment_distance.pyx"]),
-               Extension("traj_dist.cydist.sowd", ["traj_dist/cydist/sowd.pyx"]),
-               Extension("traj_dist.cydist.erp", ["traj_dist/cydist/erp.pyx"]),
-               Extension("traj_dist.cydist.edr", ["traj_dist/cydist/edr.pyx"])]
+ext_modules = [Extension("traj_dist.cydist.basic_geographical", ["traj_dist/cydist/basic_geographical.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.basic_euclidean", ["traj_dist/cydist/basic_euclidean.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.sspd", ["traj_dist/cydist/sspd.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.dtw", ["traj_dist/cydist/dtw.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.lcss", ["traj_dist/cydist/lcss.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.hausdorff", ["traj_dist/cydist/hausdorff.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.discret_frechet", ["traj_dist/cydist/discret_frechet.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.frechet", ["traj_dist/cydist/frechet.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.segment_distance", ["traj_dist/cydist/segment_distance.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.sowd", ["traj_dist/cydist/sowd.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.erp", ["traj_dist/cydist/erp.pyx"],include_dirs=[numpy.get_include()]),
+               Extension("traj_dist.cydist.edr", ["traj_dist/cydist/edr.pyx"],include_dirs=[numpy.get_include()])]
 
 setup(
     name="trajectory_distance",
